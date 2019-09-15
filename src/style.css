@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;  
+}
+
+header{
+    background-color:red;
+    width: auto;
+    height: 80px;
+    text-align: center;
+    padding: 10px;    
+}
+
+section{
+    width: auto;
+    height: 700px;
+}
+
+main{
+    width: auto;
+    height: 100px;
+}
+
+#btn-busca{
+    cursor: pointer;
+}
+#divBusca{
+    background-color: white;
+    border:solid 1px;
+    border-radius:5px;
+    width:280px
+  }
+   
+  #txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:250px;
+  }
+
+footer{
+    height: 20px;
+    background-color:red;
+    padding: 20px 10px;
+  }
