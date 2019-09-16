@@ -1,51 +1,36 @@
-document.getElementById("btn-busca").addEventListener("click", message);
+/*FUNÇÃO QUE APRESENTA TODOS OS POKEMÓNS NA TELA*/
+const POKEMONS = POKEMON.pokemon;
+const image = document.getElementById("img-pokemon");
+const namePok = POKEMONS.name;
+
+const pokemonImages = POKEMONS.map(pokemon => `<img src="${pokemon.img}">`);
+image.innerHTML = pokemonImages.join(''); 
 
 /*FUNÇÃO CLIQUE */
 function message(event) {
   window.
   event.preventDefault();
   const str = document.getElementById("txt").value;
-  
-  /*FUNÇÃO FILTER*/
-  const printpoke = ""
-  const pokeSourch = POKEMONS.filter(x => x.name == str);
-  const mapPokeSourch = pokeSourch.map( z => z.name + '<img src="${z.img}"/>');
-    /*`<img src="${pokemon.img}">`*/
-    printpoke.innerHTML = mapPokeSourch;
-    mapPokeSourch.innerHTML
-    document.getElementsByClassName("print").value = mapPokeSourch
-
-
-  console.log(Object.keys(pokeSourch))
-  console.log(pokeSourch)
-  };
  
-  
-  
+  /*FUNÇÃO FILTER*/
 
-/*FUNÇÃO MENU*/
-var veri = 1;
-var trigger = document.getElementById('menu-trigger').addEventListener("click",function(){
-var menu = document.getElementById('menu-hidde');
-if (veri == 1) {
-menu.style.right = "0px";
-veri = 0;
-}else{
-menu.style.right = "-100%";
-veri = 1;
+  const pokeSourch = POKEMONS.filter(pokemon =>{
+      if (str == pokemon.name)
+   return `<img src="${pokemon.img}">`
+    /*`<img src="${pokemon.img}">`*/
+
+  });
+  console.log(pokeSourch)
+
+function filtrar (array, condition){
+  return array.filter(item => item.type.includes(condition));
 }
-})
 
-const POKEMONS = POKEMON.pokemon;
-const image = document.getElementById("img-pokemon");
-const namePok = POKEMONS.name;
-/*
-console.log(namePok)
+}
 
-const pokemonImages = POKEMONS.map(pokemon => `<img src="${pokemon.img}">`);
+//FUNÇÃO ORDENAR 
 
-image.innerHTML = pokemonImages.join(''); 
-*/
+
 
 /*
 for (let poke of POKEMONS){
