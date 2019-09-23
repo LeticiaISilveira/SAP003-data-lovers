@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Data Lovers</title>
-  <link rel="icon" type="imagem/png" href="icons8-pokebola-48.png" />
+  <link rel="icon" type="imagem/png" href="icons8-pokebola-40.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div id="root"></div>
-  <header> <h1> <a href="https://fontmeme.com/pt/fonte-de-pokemon-go/">
-    <img src="https://fontmeme.com/permalink/190916/ce77b592380b5643d721cc435051e202.png" alt="fonte-de-pokemon-go" border="0"></a></h1> </header>
-  <div class="menu-trigger" id="menu-trigger">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-<nav class="menu-hidde" id="menu-hidde">
-<ul>
-    <li>item1</li>
-    <li>item2</li>
-    <li>item3</li>
-    <li>item4</li>
-</ul>
-</nav>
-
-  <section>
-    <div class= "print"></div>
+  <header class="header">
+    <img class="logo" src="title-po.png" alt="imagem">
+    <nav>
+      <ul class="menu">
+        <li><a href="/"><img src="icons8-pokebola-40.png" alt=""></a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="container">
+    <div class="div-left">
+      <select id="option-filter" name="filter">
+        <option value="null">Selecione um tipo</option>
+      </select>
+      <select id="option-order" name="option">
+        <option value="ascending">Crescente</option>
+        <option value="descending">Decrescente</option>
+      </select>
+      <select id="option-order-alpha" name="option-alpha">
+        <option value="ascending-alpha">A->Z</option>
+        <option value="descending-alpha">Z->A</option>
+      </select>
       <input type="text" id="txt" placeholder="Digite o nome ou nº..." />
       <img src="icon-pesquisar.png" id="btn-busca" alt="Buscar" />
-    <main id="img-pokemon">
-    </main>
+      <div id="cards">
+        <!--RECEBE OS CARDS PELO JS DIV CLASS: CARD-->
+      </div>
+    </div>
+    <div class="div-right">
+      <div class="comparation">
+        <div class="search">
+          <!--
+          <input type="text" id="txt" placeholder="Digite o nome ou nº..." />
+          <img src="icon-pesquisar.png" id="btn-busca" alt="Buscar" />-->
+        </div>
+        <div class="comparation-poke">
+          <img src="1.png" alt="">
+          <img src="2.png" alt="">
+          <img src="3.png" alt="">
+        </div>
+        <p>Div Comparação </p>
+      </div>
+      <div class="grafico">
+        <img src="grafico.png" alt="">
+        <p>Div Gráficos</p>
+      </div>
+    </div>
   </section>
-  <footer></footer>
+  <footer>
+  </footer>
   <script src="data/pokemon/pokemon.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
-</html>
 
-<!-- PokeLearn, PokeQuizz>
+</html>

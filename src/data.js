@@ -20,3 +20,8 @@ window.example = example;*/
 
 const test = (str) => document.write(str.toUpperCase)
 window.test = test;
+
+
+
+
+
