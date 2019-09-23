@@ -1,54 +1,129 @@
-/*FUNÇÃO QUE APRESENTA TODOS OS POKEMÓNS NA TELA*/
+
 const POKEMONS = POKEMON.pokemon;
-const image = document.getElementById("img-pokemon");
-const namePok = POKEMONS.name;
+const image = document.getElementById("cards");
+const name = document.getElementById("")
 
-const pokemonImages = POKEMONS.map(pokemon => `<img src="${pokemon.img}">`);
-image.innerHTML = pokemonImages.join(''); 
+//MOSTRAR POKEMONS NA TELA
+const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}" /><p id="name">${pokemon.id}-${pokemon.name}</p></div>`;
+const pokemonImages = POKEMONS.map(buildPokemonCard);
+image.innerHTML = pokemonImages.join('');
 
-/*FUNÇÃO CLIQUE */
-function message(event) {
-  window.
-  event.preventDefault();
-  const str = document.getElementById("txt").value;
- 
-  /*FUNÇÃO FILTER*/
 
-  const pokeSourch = POKEMONS.filter(pokemon =>{
-      if (str == pokemon.name)
-   return `<img src="${pokemon.img}">`
-    /*`<img src="${pokemon.img}">`*/
+//ORDENAR por ID
+//FUNÇÃO EVENTO SELECT
+document.getElementById("option-order").addEventListener("change", order);
 
-  });
-  console.log(pokeSourch)
+function order() {
+  const optionOrder = document.getElementById("option-order");
+  const orderType = optionOrder[optionOrder.selectedIndex].value;
 
-function filtrar (array, condition){
-  return array.filter(item => item.type.includes(condition));
+  if (orderType == "ascending") {
+    image.innerHTML = pokemonImages.reverse().join('');
+  } else {
+    image.innerHTML = pokemonImages.reverse().join('');
+  }
 }
 
-}
-
-//FUNÇÃO ORDENAR 
-
-
-
+//ORDENAR por NOME
 /*
-for (let poke of POKEMONS){
-    var image = document.getElementById("img-pokemon");
-    var name = document.getElementById("img-pokemon");
-    image.innerHTML += `<img src="${poke.img}"</br></br>${poke.name}</br>`
+document.getElementById("option-order-alpha").addEventListener("change", orderAlpha);
+pokemonName = POKEMONS.name
+
+function orderAlpha() {
+  const optionOrderAlpha = document.getElementById("option-order-alpha");
+  const orderType = optionOrderAlpha[optionOrderAlpha.selectedIndex].value;
+  let newOrder = "";
+  if (orderType == "ascending-alpha") {
+    newOrder = pokemonName.sort()
+    console.log(newOrder)
+
+    newOrder = pokemonImages.sort().join('');
+    console.log(newOrder);
+
+    image.innerHTML = newOrder;
+  } else {
+    image.innerHTML = pokemonImages.sort().reverse().join('');
+  }
+} Primeiro comparar names guardá-los em uma array e depois mostrar img de acordo com o nome ordenado
+*/
+document.getElementById("option-order-alpha").addEventListener("change", orderAlpha);
+
+function orderAlpha() {
+  const POKEMONS = POKEMON.pokemon;
+  const optionOrderAlpha = document.getElementById("option-order-alpha");
+  const orderType = optionOrderAlpha[optionOrderAlpha.selectedIndex].value;
+  let newOrder = "";
+ 
+
+  for (pokemon of POKEMONS) {
+    if (orderType == "ascending-alpha"){
+      
+      console.log(POKEMONS.type)
+    }
+    newOrder+= `<div class="card"><img src="${pokemon.img}" /><p>${pokemon.name}</p></div>`
+  }
+  return image.innerHTML = newOrder
+}
 
 
-const image = document.getElementById("img-pokemon");
-  //(POKEMONS.forEach(poke =>  image.innerHTML += `<img src="${poke.img}">`))
+//PESQUISAR POKEMON POR NOME
 
-const pokemonImages = POKEMONS.map(pokemon => `<img src="${pokemon.img}">`);
+//FUNÇÃO EVENTO CLIQUE PESQUISA
+document.getElementById("btn-busca").addEventListener("click", strPoke);
 
-image.innerHTML = pokemonImages.join(''); 
+function strPoke() {
+  const str = document.getElementById("txt").value;
+  const image = document.getElementById("cards");
+  let pok = ""
 
-for(let poke=0;poke<10;poke++){
-  var image = document.getElementById("img-pokemon");
-  var name = document.getElementById("img-pokemon");
-  image.innerHTML += `<img src="${POKEMONS[poke].img}"</br></br>${POKEMONS[poke].name}</br>`
+  POKEMONS.filter(pokemon => {
+    if (str == pokemon.name) {
+      pok = pok += buildPokemonCard(pokemon)
+    } else if (str == "") {
+      pok += buildPokemonCard(pokemon)
 
-}*/
+    }
+    return image.innerHTML = pok
+  });
+}
+
+
+
+
+
+//FUNÇÃO FILTRAR
+
+const array = [];
+for (let pokemon of POKEMONS) {
+  pokemon.type.map(elem => array.push(elem));
+}
+const allTypes = array.filter((elem, index) => array.indexOf(elem) === index);
+
+//FUNÇÃO DO FILTRO DOS TIPOS
+function filter(arr, condicao) {
+  console.log(arr.filter(item => item.type.includes(condicao)))
+}
+
+//FUNÇÃO CHAMANDO A OPÇÃO DO FILTRO
+document.getElementById("option-filter").innerHTML += `${allTypes.map(elem => `<option value="${elem}">${elem}</option>`)}`
+
+document.getElementById("option-filter").addEventListener("change", filter);
+
+function filter() {
+  const POKEMONS = POKEMON.pokemon;
+  const optionFilter = document.getElementById("option-filter");
+  const filterType = optionFilter[optionFilter.selectedIndex].value;
+  let resposta = ""
+
+  for (pokemon of POKEMONS) {
+    if (pokemon.type.includes(filterType)) {
+      resposta += buildPokemonCard(pokemon);
+    }
+  }
+  return image.innerHTML = resposta
+}
+
+
+
+
+
