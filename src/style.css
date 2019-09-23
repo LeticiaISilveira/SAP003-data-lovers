@@ -18,7 +18,27 @@ h1{
       
 }
 
-#menu-trigger {
+.container{
+    display: grid;
+}
+
+.left{
+    background-color: #4D6C7D;
+    border: solid  #4D6C7D;
+    border-radius: 5px;
+    margin: 0.5%;
+}
+
+.card{
+    border: 4px solid;
+    display: inline-block;
+}
+
+.box{
+    width: 200px;
+}
+
+    #menu-trigger {
     width: 30px;
     height: 20px;
     position: absolute;
@@ -64,10 +84,10 @@ section{
 
 main{
     width: auto;
-    height: 100px;
+    height: 700px;
 }
 
-#btn-busca{
+/*#btn-busca{
     cursor: pointer;
 }
 #divBusca{
@@ -86,7 +106,7 @@ main{
     border:none;
     height:32px;
     width:250px;
-  }
+  }*/
 
 footer{
     height: 20px;

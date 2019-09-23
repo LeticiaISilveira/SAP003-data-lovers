@@ -1,22 +1,27 @@
+function filter(arr, condition) { 
+  console.log(arr.filter(item => item.type.includes(condition)))
+ }
+
+ //window.data = filter
+
+ app = {
+   filter
+ }
+
 // esta é uma função de exemplo
 // veja como agregamos a função ao objeto global window
 /*
 const example = () => {
   return "example";
-};
+};*/
 
-window.example = example;*/
+/*window.example = example;*/
 
-/*const search = (str) => {
+//FUNÇÃO DO FILTRO DOS TIPOS
 
-  const pokemonImages = POKEMONS.map(pokemon => `<img src="${pokemon.img}">`);
-  return "example";
-};
-/*
-(POKEMONS.forEach(poke =>  image.innerHTML += `<img src="${poke.img}">`))
-
-window.example = example;*/
+/*function filtrar (array, condition){
+return array.filter(item => item.type.includes(condition));
+}*/
 
 
-const test = (str) => document.write(str.toUpperCase)
-window.test = test;
+//FUNÇÃO ORDENAR 

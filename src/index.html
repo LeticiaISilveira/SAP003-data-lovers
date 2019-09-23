@@ -24,12 +24,26 @@
 </ul>
 </nav>
 
-  <section>
-    <div class= "print"></div>
-      <input type="text" id="txt" placeholder="Digite o nome ou nº..." />
-      <img src="icon-pesquisar.png" id="btn-busca" alt="Buscar" />
+<select id="option-filter" name="filter">
+    <option value="nome">Selecione o tipo</option>
+  </select>
+
+  <select id="option-order" name="order">
+    <option value="nome">Ordenar</option>
+    <option value="1">A-Z</option>
+    <option value="2">Z-A</option>
+</select>
+
+<div class="cards"></div>
+
+  <section class="container">
     <main id="img-pokemon">
-    </main>
+    <div class="box left">
+    </div>
+     
+     </main>
+
+    
   </section>
   <footer></footer>
   <script src="data/pokemon/pokemon.js"></script>
