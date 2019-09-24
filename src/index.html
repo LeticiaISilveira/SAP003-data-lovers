@@ -21,30 +21,25 @@
   </header>
   <section class="container">
     <div class="div-left">
-      <select id="option-filter" name="filter">
-        <option value="null">Selecione um tipo</option>
-      </select>
-      <select id="option-order" name="option">
-        <option value="ascending">Crescente</option>
-        <option value="descending">Decrescente</option>
-      </select>
-      <select id="option-order-alpha" name="option-alpha">
-        <option value="ascending-alpha">A->Z</option>
-        <option value="descending-alpha">Z->A</option>
-      </select>
-      <input type="text" id="txt" placeholder="Digite o nome ou nº..." />
-      <img src="icon-pesquisar.png" id="btn-busca" alt="Buscar" />
+      <span class="div-buttons">
+        <select id="option-filter" name="filter">
+          <option value="null">Selecione um tipo</option>
+        </select>
+        <select id="option-order" name="option">
+          <option value="ascending">Crescente</option>
+          <option value="descending">Decrescente</option>
+        </select>
+        <input type="text" id="txt" placeholder="Digite o nome" />
+        <img src="icon-pesquisar.png" id="btn-busca" alt="Buscar" />
+      </span>
+
       <div id="cards">
         <!--RECEBE OS CARDS PELO JS DIV CLASS: CARD-->
       </div>
     </div>
     <div class="div-right">
       <div class="comparation">
-        <div class="search">
-          <!--
-          <input type="text" id="txt" placeholder="Digite o nome ou nº..." />
-          <img src="icon-pesquisar.png" id="btn-busca" alt="Buscar" />-->
-        </div>
+       
         <div class="comparation-poke">
           <img src="1.png" alt="">
           <img src="2.png" alt="">

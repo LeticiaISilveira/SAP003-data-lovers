@@ -75,7 +75,17 @@ footer{
     border: solid  #4D6C7D;
     border-radius: 5px;
     margin: 0.5%;  
-    max-height: 800px;    
+    max-height: 600px;    
+   /* overflow: scroll;*/
+}
+
+.div-buttons{
+    margin-bottom: 50px; 
+
+}
+
+#btn-busca{
+    display: inline;
 }
 
 .comparation{
@@ -91,12 +101,14 @@ footer{
     background-color: #4D6C7D;
     border: solid  #4D6C7D;
     border-radius: 5px;
-    height: 400px;
+    height: 380px;
 }
 
 #cards{
     display: grid;
-    grid-template-columns: repeat(4, 1fr)
+    grid-template-columns: repeat(4, 1fr);
+    overflow: scroll;
+    max-height: 540px; 
 }
 
 .card {
@@ -116,6 +128,8 @@ footer{
     box-shadow: 0 12px 24px 0  whitesmoke;
     transform: rotatex(20deg);
 }
+
+
  
 .card img{
     width: 100%;
@@ -146,6 +160,7 @@ footer{
 .container{
     width: 100%;
     height: 100%;
+    
 }
 .comparation-poke{
     display:flex;
