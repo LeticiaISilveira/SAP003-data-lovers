@@ -23,13 +23,13 @@ function compareAscending(a, b) {
 function order() {
   const orderType = optionOrder[optionOrder.selectedIndex].value;
   const orderedPokemons = POKEMONS;
-    if (orderType === "ascending") {
-      orderedPokemons.sort(compareAscending);
-    } else {
-      orderedPokemons.sort(compareAscending).reverse();
-    }
-    const pokeCards = orderedPokemons.map(buildPokemonCard);
-    image.innerHTML = pokeCards.join('');
+  if (orderType === "ascending") {
+    orderedPokemons.sort(compareAscending);
+  } else {
+    orderedPokemons.sort(compareAscending).reverse();
+  }
+  const pokeCards = orderedPokemons.map(buildPokemonCard);
+  image.innerHTML = pokeCards.join('');
 }
 
 //FUNÇÃO EVENTO CLIQUE PESQUISA
@@ -40,9 +40,9 @@ function strPoke() {
   const image = document.getElementById("cards");
 
   const filteredPokemons = POKEMONS.filter(pokemon => {
-  let pok = ""
-  if (pokemon.name.toLowerCase().includes(str)) {
-    pok = buildPokemonCard(pokemon)
+    let pok = ""
+    if (pokemon.name.toLowerCase().includes(str)) {
+      pok = buildPokemonCard(pokemon)
     }
     if (str == "") {
       pok = buildPokemonCard(pokemon)
@@ -50,7 +50,7 @@ function strPoke() {
     }
     return pok
   });
-  
+
   image.innerHTML = filteredPokemons.join('');
 }
 
@@ -86,3 +86,72 @@ function filter() {
   }
   return image.innerHTML = resposta
 }
+
+//FUNÇÃO DO CÁLCULO
+const banana = [];
+let grass = 0
+let poison = 0
+let fire = 0
+let flying = 0
+let water = 0
+let bug = 0
+let normal = 0
+let eletric = 0
+let ground = 0
+let fighting = 0
+let psychic = 0
+let rock = 0
+let ice = 0
+let ghost = 0
+let dragon = 0
+for (let pokemon of POKEMONS) {
+  pokemon.type.map(elem =>{
+    banana.push(elem)
+    if (elem == "Grass") {
+      grass++
+    }
+    if (elem == "Poison") {
+      poison++
+    }
+    if (elem == "Fire") {
+      fire++
+    }
+    if (elem == "Flying") {
+      flying++
+    }
+    if (elem == "Water") {
+      water++
+    }
+    if (elem == "Bug") {
+      bug++
+    }
+    if (elem == "Normal") {
+      normal++
+    }
+    if (elem == "Eletric") {
+      eletric++
+    }
+    if (elem == "Ground") {
+      ground++
+    }
+    if (elem == "Fighting") {
+      fighting++
+    }
+    if (elem == "Psychic") {
+      psychic++
+    }
+    if (elem == "Rock") {
+      rock++
+    }
+    if (elem == "Ice") {
+      ice++
+    }
+    if (elem == "Ghost") {
+      ghost++
+    }
+    if (elem == "Dragon") {
+      dragon++
+    }
+  });
+}
+console.log(fire)
