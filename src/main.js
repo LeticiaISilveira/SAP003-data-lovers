@@ -86,3 +86,20 @@ function filter() {
   }
   return image.innerHTML = resposta
 }
+
+
+let calc = document.getElementById("calc")
+
+//calc.innerHTML = tipo
+
+/*
+for (pokemon of POKEMONS){
+}*/
+
+const tipo = 0
+for(i=0;i<POKEMONS.lenght;i++){
+   tipo+= POKEMONS.type
+
+}
+console.log(tipo)
+

@@ -1,6 +1,6 @@
 body{
-    background-color: rgb(23, 55, 172);
     background-color: #91B5C9;
+    background-color: white;
 }
 
 body, ul, li, p{
@@ -32,7 +32,10 @@ footer{
     padding: 20px 10px;
 }
 .header{
-    background:rgb(226, 64, 64);    
+    background:rgb(226, 64, 64); 
+    background: #801F09;
+    background: #BF2E0D;
+    border-bottom: solid 10px black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -57,7 +60,8 @@ footer{
 }
 */
 .logo{
-    width: 400px;
+    width: 200px;
+    text-align: center;
 }
 
 .container{
@@ -72,7 +76,8 @@ footer{
 
 .div-left{
     background-color: #4D6C7D;
-    border: solid  #4D6C7D;
+    background-color:#D3E6E5;
+    background-color:#EBFFFE;
     border-radius: 5px;
     margin: 0.5%;  
     max-height: 600px;    
@@ -88,18 +93,16 @@ footer{
     display: inline;
 }
 
-.comparation{
+.calculo-tipo{
     height: 200px;
     margin: 1%; 
-    background-color: #4D6C7D;
-    border: solid  #4D6C7D;
+    background-color:#EBFFFE;
     border-radius: 5px;
 }
 
 .grafico{
     margin: 1%;
-    background-color: #4D6C7D;
-    border: solid  #4D6C7D;
+    background-color:#EBFFFE;
     border-radius: 5px;
     height: 380px;
 }
@@ -121,6 +124,7 @@ footer{
     background-color: gainsboro;
     border: solid thick gray;
     border-radius: 10px;
+    
 
 }
   
