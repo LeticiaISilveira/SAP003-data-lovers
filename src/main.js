@@ -3,7 +3,7 @@ const POKEMONS = POKEMON.pokemon;
 const image = document.getElementById("cards");
 
 //MOSTRAR POKEMONS NA TELA
-const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}" /><p id="name">${pokemon.name}</p></div>`;
+const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}" /><div class="name-card"><p id="name">${pokemon.name}</p></div></div>`;
 let pokemonImages = POKEMONS.map(buildPokemonCard);
 image.innerHTML = pokemonImages.join('');
 
@@ -39,14 +39,10 @@ function strPoke() {
   const str = document.getElementById("txt").value;
   const image = document.getElementById("cards");
 
-  const filteredPokemons = POKEMONS.filter(pokemon => {
+  const filteredPokemons = POKEMONS.map(pokemon => {
     let pok = ""
-    if (pokemon.name.toLowerCase().includes(str)) {
+    if (pokemon.name.toLowerCase().includes(str.toLowerCase())) {
       pok = buildPokemonCard(pokemon)
-    }
-    if (str == "") {
-      pok = buildPokemonCard(pokemon)
-
     }
     return pok
   });
@@ -86,7 +82,7 @@ function filter() {
   }
   return image.innerHTML = resposta
 }
-
+/*
 //FUNÇÃO DO CÁLCULO
 const banana = [];
 let grass = 0
@@ -154,4 +150,4 @@ for (let pokemon of POKEMONS) {
     }
   });
 }
-console.log(fire)
+console.log(fire)*/
