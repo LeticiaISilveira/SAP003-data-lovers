@@ -20,7 +20,14 @@ p {
     padding: 0%;
     list-style: none;
     font-size: 1.2rem;
-    font-family: Arial;
+    font-family: Arial;  
+}
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+
 }
 
 a {
