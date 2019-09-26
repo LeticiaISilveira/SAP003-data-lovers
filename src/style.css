@@ -1,9 +1,21 @@
-body{
+body {
     background-color: rgb(23, 55, 172);
     background-color: #91B5C9;
+   /* background-image: url(pokbg.jpg);*/
+    background-image: url(pokk.png);
+    /*background-image: url(z7_wYb9-YSvt0pDJlDIu8iuK_aWdqZPg0wvrGdwNvBw.png);*/
+    background-image: url(pokbg.jpg);
+   
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-body, ul, li, p{
+body,
+ul,
+li,
+p {
     margin: 0%;
     padding: 0%;
     list-style: none;
@@ -15,171 +27,168 @@ body, ul, li, p{
     display: block;
     margin-left: auto;
     margin-right: auto
+
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(161, 216, 198);
 }
 
-h1{
+h1 {
     text-align: center;
     margin-top: 100px;
 }
 
-img{
+img {
     max-width: 100%;
     display: block;
 }
-footer{
-    height: 20px;
-    background-color:rgb(226, 64, 64);    
-    padding: 20px 10px;
-}
-.header{
-    background:rgb(226, 64, 64);    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+
+.header {
     align-items: center;
     padding: 20px;
     max-height: 70px;
-
 }
 
-    
-.menu{
+.menu {
     display: flex;
 }
 
-.menu li{
+.menu li {
     margin-left: 20px;
 }
+
+
 /*
 .menu li a{
     display: block;
     padding: 10px;
 }
 */
-.logo{
+
+.logo {
     width: 400px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
 }
 
-.container > div{
+.container>div {
     flex: 1 1 200px;
-    
 }
 
-.div-left{
-    background-color: #4D6C7D;
-    border: solid  #4D6C7D;
-    border-radius: 5px;
-    margin: 0.5%;  
-    max-height: 600px;    
-   /* overflow: scroll;*/
+.div-left {
+    background-color: #E1E8D1;
+    /* border: solid thin rgba(128, 0, 0);*/
+    background-color: rgba(128, 0, 0, 0.253);
+    backdrop-filter: 0.5;
+    margin: 0.5%;
+    max-height: 600px;
+    /* overflow: scroll;*/
 }
 
-.div-buttons{
-    margin-bottom: 50px; 
-
+.div-buttons {
+    margin-bottom: 50px;
 }
 
-#btn-busca{
+#btn-busca {
     display: inline;
 }
 
-.comparation{
+.comparation {
     height: 200px;
-    margin: 1%; 
-    background-color: #4D6C7D;
-    border: solid  #4D6C7D;
-    border-radius: 5px;
+    margin: 1%;
+    background-color: rgb(0, 46, 128, 0.5);
+    /* border: solid thin rgba(128, 0, 0);*/
+    background-color: rgba(128, 0, 0, 0.253);
 }
 
-.grafico{
+.grafico {
     margin: 1%;
-    background-color: #4D6C7D;
-    border: solid  #4D6C7D;
-    border-radius: 5px;
+    background-color: rgb(0, 46, 128, 0.5);
+    /* border: solid thin rgba(128, 0, 0);*/
+    background-color: rgba(128, 0, 0, 0.253);
     height: 380px;
 }
 
-#cards{
+#cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow: scroll;
-    max-height: 540px; 
+    max-height: 540px;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 black;
     transition: 0.1s;
-    padding: 2px 6px;
+    padding: 2px;
     margin: 5px;
     display: inline-flex;
     display: block;
-    background-color: gainsboro;
-    border: solid thick gray;
-    border-radius: 10px;
-
+    background-color: white;
+    border-radius: 2px;
 }
-  
+
+.name-card {
+    background-color: ;
+    width: 100%;
+    display: flexbox;
+    border: solid thin black;
+    margin-top: 1.5em;
+}
+
 .card:hover {
-    box-shadow: 0 12px 24px 0  whitesmoke;
+    box-shadow: 0 12px 24px 0 whitesmoke;
     transform: rotatex(20deg);
 }
 
-
- 
-.card img{
+.card img {
     width: 100%;
 }
-.card p{
+
+.card p {
     width: 100%;
-    color: aliceblue;
+    color: black;
     align-items: center;
     text-align: center;
     display: inline-flex;
-    background-color: gray;
-    border-radius:4px;
+    border-radius: 4px;
     text-align: center;
-   
 }
-#name{
+
+#name {
     font-display: Arial;
-    text-align: center; /*Não funcionou... n sei como fazer :/ */
+    text-align: center;
+    /*Não funcionou... n sei como fazer :/ */
     border-radius: 5px;
+    text-decoration-color: #E1E8D1 width: 100%;
 }
 
-.main{
+.main {
     width: 100%;
     height: 100%;
-    
 }
 
-.container{
+.container {
     width: 100%;
     height: 100%;
-    
 }
-.comparation-poke{
-    display:flex;
+
+.comparation-poke {
+    display: flex;
     padding: 1%;
     align-items: center;
 }
 
-.search{
+.search {
     display: flex;
 }
-
-
-
-
 
 
 /*
@@ -203,6 +212,7 @@ footer{
 }
 .container > div
 */
+
 
 /**{
     margin: 0;
