@@ -5,6 +5,7 @@ const image = document.getElementById("cards");
 exibeMenuTipos()
 
 //MOSTRAR POKEMONS NA TELA
+//criar função
 const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}" /><div class="name-card"><p id="name">${pokemon.name}</p></div></div>`;
 let pokemonImages = POKEMONS.map(buildPokemonCard);
 image.innerHTML = pokemonImages.join('');
@@ -21,41 +22,41 @@ function orderPoke() {
   const orderedPokemons = app.order(POKEMONS, orderName) 
   buildPokemonCard(arrayFiltrada);
 }*/
-/*
-//ORDENAR por nome
+
+// ORDENAR por nome
 document.getElementById("option-order").addEventListener("change", order);
-// const optionOrder = document.getElementById("option-order");
+const optionOrder = document.getElementById("option-order");
 
 
-function compareAscending(a, b) {
-  if (a.name < b.name)
-    return -1;
-  if (a.name > b.name)
-    return 1;
-  return 0;
-}
 
 function order() {
   const orderType = optionOrder.value;
   const orderedPokemons = POKEMONS;
   if (orderType === "ascending") {
-    orderedPokemons.sort(compareAscending); 
+    orderedPokemons.sort(compareAscending);
   } else {
     orderedPokemons.sort(compareAscending).reverse();
   }
   const pokeCards = orderedPokemons.map(buildPokemonCard);
   image.innerHTML = pokeCards.join('');
 }
-*/
+
 
 
 //FUNÇÃO EVENTO CLIQUE PESQUISA
 document.getElementById("btn-busca").addEventListener("click", searchPok);
 
 function searchPok() {
+  console.log("chamou função")
   const namePok = document.getElementById("txt").value;
+
   const arrayRetornada = app.search(POKEMONS, namePok);
-  buildPokemonCard(arrayRetornada)
+  console.log(arrayRetornada)
+  let pokemonImages = arrayRetornada.map(buildPokemonCard);
+
+  image.innerHTML = pokemonImages.join('');
+
+  //buildPokemonCard(arrayRetornada)
 }
 
 
@@ -77,7 +78,7 @@ function filterPoke() {
   const filterType = optionFilter.value;
   const arrayFiltrada = app.filter(POKEMONS, filterType);
   arrayFiltrada.map(elem => resposta += buildPokemonCard(elem))
-  
+
   comparacao.innerHTML = `<p> Pokemons desse tipo ${filterType}  ${(arrayFiltrada.length * 100 / 151).toFixed(2)} ${"%"}</p>`
   return image.innerHTML = resposta
 }
