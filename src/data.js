@@ -1,28 +1,12 @@
-// esta é uma função de exemplo
-// veja como agregamos a função ao objeto global window
-/*
-const example = () => {
-  return "example";
-};
-
-window.example = example;*/
-
-
-
 app = {
   filter,
   search,
   filterOptions
-  
 };
 
-//FILTRAR TIPO
 
-//FILTRAR TIPO e CALCULO DE PORCENTAGENS RESPECTIVAS
 
-function filter(array, condition) {
-  return array.filter(item => item.type.includes(condition))
-}
+
 
 /*//ORDENAR NOME
 function order(array, condition,compareAscending()) {
@@ -31,9 +15,11 @@ function order(array, condition,compareAscending()) {
 
 //PESQUISAR NOME
 function search(array, condition) {
-  return array.map(item => item.name.toLowerCase().includes(namePok.toLowerCase()))
+  return array.map(item => item.name.includes(condition))
+/*return array.map(item => item.name.toLowerCase(condition).includes(array.toLowerCase(condition)))*/
 }
 
+//SELECIONAR TIPOS
 function filterOptions(arr){
   const array = []
   for (let item of arr) {
@@ -42,11 +28,11 @@ function filterOptions(arr){
   return array.filter((elem, index) => array.indexOf(elem) === index); 
 }
 
-window.app = {
-  filter: filter,
-  // compareAscending: compareAscending,
-  search: search
-};
+//FILTRAR TIPO e CALCULO DE PORCENTAGENS RESPECTIVAS
+
+function filter(array, condition) {
+  return array.filter(item => item.type.includes(condition))
+}
 
 
 
