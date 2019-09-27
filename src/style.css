@@ -1,14 +1,6 @@
 body {
-    background-color: rgb(23, 55, 172);
-    background-color: #91B5C9;
-   /* background-image: url(pokbg.jpg);*/
-    background-image: url(pokk.png);
-    /*background-image: url(z7_wYb9-YSvt0pDJlDIu8iuK_aWdqZPg0wvrGdwNvBw.png);*/
     background-image: url(pokbg.jpg);
-   
-
     background-attachment: fixed;
-    background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
@@ -23,17 +15,7 @@ p {
     font-family: Arial;  
 }
 
-.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto
 
-}
-
-a {
-    text-decoration: none;
-    color: rgb(161, 216, 198);
-}
 
 h1 {
     text-align: center;
@@ -49,27 +31,12 @@ img {
     align-items: center;
     padding: 20px;
     max-height: 70px;
+    display: inline;
 }
 
-.menu {
-    display: flex;
-}
-
-.menu li {
-    margin-left: 20px;
-}
-
-
-/*
-.menu li a{
-    display: block;
-    padding: 10px;
-}
-*/
 
 .logo {
-    width: 400px;
-    display:block;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -189,7 +156,37 @@ img {
 .search {
     display: flex;
 }
+#option-order, #option-filter{
+    background-color:black;
+    color: rgb(245, 209, 7);
+    border: black;
+}
 
+#option-order:hover, #option-filter:hover{
+    background-color:rgb(245, 209, 7);
+    color: black;
+    border: rgb(245, 209, 7);
+}
+
+#txt{
+    width:120px;
+    background-color:rgb(255, 255, 255,0);
+    padding-left:5px;
+    font-style:italic;
+    font-size:15px;
+    border: rgb(255, 255, 255,0);
+    border-bottom:solid  black;
+}
+
+#txt:hover{
+    border: rgb(255, 255, 255,0);
+    border-bottom:solid thick  black;
+    padding-left:5px;
+    font-style:italic white;
+    font-size:15px; 
+    box-sizing: 50px;
+   
+}
 
 /*
 .container{
@@ -255,15 +252,6 @@ main{
     width:280px
   }
    
-  #txtBusca{
-    float:left;
-    background-color:transparent;
-    padding-left:5px;
-    font-style:italic;
-    font-size:18px;
-    border:none;
-    height:32px;
-    width:250px;
-  }
+
 
 */

@@ -7,13 +7,28 @@ const example = () => {
 
 window.example = example;*/
 
-const test = (str) => document.write(str.toUpperCase)
-window.test = test;
+
+//FILTRAR TIPO e CALCULO DE PORCENTAGENS RESPECTIVAS
+function filter(array, condition) {
+  return array.filter(item => item.type.includes(condition))
+}
+
+/*//ORDENAR NOME
+function order(array, condition,compareAscending()) {
+  return array.sort(item => item.type.includes(condition))
+}*/
+
+//PESQUISAR NOME
+function search(array, condition) {
+  return array.map(item => item.name.toLowerCase().includes(namePok.toLowerCase()))
+}
 
 
-
- //window.data = filter
- //window.data = order
+window.app = {
+  filter: filter,
+  // compareAscending: compareAscending,
+  search: search
+};
 
 
 
