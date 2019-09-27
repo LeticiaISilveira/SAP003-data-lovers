@@ -2,6 +2,8 @@
 const POKEMONS = POKEMON.pokemon;
 const image = document.getElementById("cards");
 
+exibeMenuTipos()
+
 //MOSTRAR POKEMONS NA TELA
 const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}" /><div class="name-card"><p id="name">${pokemon.name}</p></div></div>`;
 let pokemonImages = POKEMONS.map(buildPokemonCard);
@@ -21,10 +23,6 @@ function orderPoke() {
   const orderedPokemons = app.order(POKEMONS, orderName) /*******/
   buildPokemonCard(arrayFiltrada);
 }
-
-//ORDENAR por nome
-document.getElementById("option-order").addEventListener("change", order);
-const optionOrder = document.getElementById("option-order");
 
 function compareAscending(a, b) {
   if (a.name < b.name)
@@ -60,15 +58,10 @@ function searchPok() {
 
 //FUNÇÃO RETORNAR OPÇÃO DO FILTRO
 
-const array = [];
-for (let pokemon of POKEMONS) {
-  pokemon.type.map(elem => array.push(elem));
+function exibeMenuTipos(){
+  const arrayTipos = app.filterOptions(POKEMONS)
+  document.getElementById("option-filter").innerHTML += `${arrayTipos.map(elem => `<option value="${elem}">${elem}</option>`)}`  
 }
-
-const allTypes = array.filter((elem, index) => array.indexOf(elem) === index);
-
-document.getElementById("option-filter").innerHTML += `${allTypes.map(elem => `<option value="${elem}">${elem}</option>`)}`
-
 
 //FUNÇÃO FILTRAR
 

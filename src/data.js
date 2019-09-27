@@ -8,10 +8,10 @@ const example = () => {
 window.example = example;*/
 
 
-app.data = {
-  filter: filter,
-  compareAscending: compareAscending,
-  search: search
+app = {
+  filter,
+  search,
+  filterOptions
   
 };
 
@@ -30,6 +30,13 @@ function search(array, condition) {
   return array.map(item => item.name.toLowerCase().includes(namePok.toLowerCase()))
 }
 
+function filterOptions(arr){
+  const array = []
+  for (let item of arr) {
+    item.type.map(elem => array.push(elem));
+  }
+  return array.filter((elem, index) => array.indexOf(elem) === index); 
+}
 
 
 
