@@ -11,18 +11,17 @@ image.innerHTML = pokemonImages.join('');
 
 buildPokemonCard(POKEMONS);
 
-//main
+/*
 document.getElementById("option-order").addEventListener("change", order);
 const optionOrder = document.getElementById("option-order");
 
 function orderPoke() {
   const orderName = optionOrder.value;
 
-  const orderedPokemons = app.order(POKEMONS, orderName) /*******/
+  const orderedPokemons = app.order(POKEMONS, orderName) 
   buildPokemonCard(arrayFiltrada);
-}
-
-
+}*/
+/*
 //ORDENAR por nome
 document.getElementById("option-order").addEventListener("change", order);
 // const optionOrder = document.getElementById("option-order");
@@ -47,7 +46,7 @@ function order() {
   const pokeCards = orderedPokemons.map(buildPokemonCard);
   image.innerHTML = pokeCards.join('');
 }
-
+*/
 
 
 //FUNÇÃO EVENTO CLIQUE PESQUISA
@@ -63,21 +62,10 @@ function searchPok() {
 
 //FUNÇÃO RETORNAR OPÇÃO DO FILTRO
 
-function exibeMenuTipos(){
+function exibeMenuTipos() {
   const arrayTipos = app.filterOptions(POKEMONS)
-  document.getElementById("option-filter").innerHTML += `${arrayTipos.map(elem => `<option value="${elem}">${elem}</option>`)}`  
+  document.getElementById("option-filter").innerHTML += `${arrayTipos.map(elem => `<option value="${elem}">${elem}</option>`)}`
 }
-
-//FUNÇÃO que cria as OPÇÕES DO FILTRO
-const array = [];
-for (let pokemon of POKEMONS) {
-  pokemon.type.map(elem => array.push(elem));
-  }
-const allTypes = array.filter((elem, index) => array.indexOf(elem) === index);
-
-document.getElementById("option-filter").innerHTML += `${allTypes.map(elem => `<option value="${elem}">${elem}</option>`)}`
-
-
 
 //FUNÇÃO FILTRAR
 document.getElementById("option-filter").addEventListener("change", filterPoke);
@@ -87,12 +75,11 @@ const comparacao = document.getElementById("comparation")
 function filterPoke() {
   let resposta = ""
   const filterType = optionFilter.value;
-  const arrayFiltrada = window.app.filter(POKEMONS, filterType);
-  arrayFiltrada.map(elem => resposta += buildPokemonCard(elem) )
-  console.log(arrayFiltrada)
-
-  comparacao.innerHTML = `<p> Pokemons desse tipo ${filterType}  ${(arrayFiltrada.length*100/151).toFixed(2)} ${"%"}</p>`
-return image.innerHTML = resposta
+  const arrayFiltrada = app.filter(POKEMONS, filterType);
+  arrayFiltrada.map(elem => resposta += buildPokemonCard(elem))
+  
+  comparacao.innerHTML = `<p> Pokemons desse tipo ${filterType}  ${(arrayFiltrada.length * 100 / 151).toFixed(2)} ${"%"}</p>`
+  return image.innerHTML = resposta
 }
 
 
