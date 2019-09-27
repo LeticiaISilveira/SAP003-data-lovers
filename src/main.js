@@ -7,10 +7,8 @@ const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}"
 let pokemonImages = POKEMONS.map(buildPokemonCard);
 image.innerHTML = pokemonImages.join('');
 
-//data
-function order(array, condition) {
-  return array.sort(item => item.name.toLowerCase().includes(namePok.toLowerCase()))
-}
+buildPokemonCard(POKEMONS);
+
 //main
 document.getElementById("option-order").addEventListener("change", order);
 const optionOrder = document.getElementById("option-order");
@@ -24,7 +22,7 @@ function orderPoke() {
 
 //ORDENAR por nome
 document.getElementById("option-order").addEventListener("change", order);
-const optionOrder = document.getElementById("option-order");
+// const optionOrder = document.getElementById("option-order");
 
 function compareAscending(a, b) {
   if (a.name < b.name)
@@ -58,26 +56,33 @@ function searchPok() {
 }
 
 
-//FUNÇÃO RETORNAR OPÇÃO DO FILTRO
-
+//FUNÇÃO que cria as OPÇÕES DO FILTRO
 const array = [];
 for (let pokemon of POKEMONS) {
   pokemon.type.map(elem => array.push(elem));
-}
-
+  }
 const allTypes = array.filter((elem, index) => array.indexOf(elem) === index);
 
 document.getElementById("option-filter").innerHTML += `${allTypes.map(elem => `<option value="${elem}">${elem}</option>`)}`
 
 
 //FUNÇÃO FILTRAR
-
 document.getElementById("option-filter").addEventListener("change", filterPoke);
 const optionFilter = document.getElementById("option-filter");
+const comparacao = document.getElementById("comparation")
 
 function filterPoke() {
+  let resposta = ""
   const filterType = optionFilter.value;
+  const arrayFiltrada = window.app.filter(POKEMONS, filterType);
+  arrayFiltrada.map(elem => resposta += buildPokemonCard(elem) )
+  console.log(arrayFiltrada)
 
-  const arrayFiltrada = app.filter(POKEMONS, filterType) 
-  buildPokemonCard(arrayFiltrada);
+  comparacao.innerHTML = `<p> Pokemons desse tipo ${filterType}  ${(arrayFiltrada.length*100/151).toFixed(2)} ${"%"}</p>`
+return image.innerHTML = resposta
 }
+
+
+
+
+

@@ -8,20 +8,13 @@ const example = () => {
 window.example = example;*/
 
 
-app.data = {
-  filter: filter,
-  compareAscending: compareAscending,
-  search: search
-  
-};
-
-//FILTRAR TIPO
+//FILTRAR TIPO e CALCULO DE PORCENTAGENS RESPECTIVAS
 function filter(array, condition) {
   return array.filter(item => item.type.includes(condition))
 }
 
 /*//ORDENAR NOME
-function filter(array, condition,compareAscending()) {
+function order(array, condition,compareAscending()) {
   return array.sort(item => item.type.includes(condition))
 }*/
 
@@ -31,7 +24,11 @@ function search(array, condition) {
 }
 
 
-
+window.app = {
+  filter: filter,
+  // compareAscending: compareAscending,
+  search: search
+};
 
 
 
