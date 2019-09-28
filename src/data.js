@@ -1,30 +1,30 @@
-window.app = {
-  filter,
-  search,
-  filterOptions
+window.data = {
+  filter: filter,
+  search: search,
+  filterOptions: filterOptions,
+  sort: sort
 };
 
+// ORDENAR por nome
 
-
-
-
-/*//ORDENAR NOME
-function order(array, condition,compareAscending()) {
-  return array.sort(item => item.type.includes(condition))
-}*/
-/*
-array.sort(function (a, b) {
-  return b.condition.localeCompare(a.condition)
-})*/
+function sort(array, condition) {
+  return array.sort(function (a, b) {
+    if (condition === "ascending") {
+      return a.name.localeCompare(b.name);
+    } else {
+      return b.name.localeCompare(a.name);
+    }
+  });
+}
 
 //PESQUISAR NOME
 function search(array, condition) {
-  return array.filter(item => item.name.toLowerCase().includes(condition.toLowerCase()))
+  return array.filter(item => item.name.toLowerCase().includes(condition.toLowerCase()));
 }
 
 //SELECIONAR TIPOS
 function filterOptions(arr) {
-  const array = []
+  const array = [];
   for (let item of arr) {
     item.type.map(elem => array.push(elem));
   }
@@ -34,11 +34,6 @@ function filterOptions(arr) {
 //FILTRAR TIPO e CALCULO DE PORCENTAGENS RESPECTIVAS
 
 function filter(array, condition) {
-  return array.filter(item => item.type.includes(condition))
+  return array.filter(item => item.type.includes(condition));
 }
-
-
-
-
-
 
