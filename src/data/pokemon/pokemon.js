@@ -4084,3 +4084,5 @@ const POKEMON = {
     ]
   }]
 };
+
+window.pokemons = POKEMON;

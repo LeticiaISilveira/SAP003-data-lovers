@@ -70,10 +70,13 @@ img {
 
 .comparation {
     height: 200px;
+
     margin: 1%;
     background-color: rgb(0, 46, 128, 0.5);
     /* border: solid thin rgba(128, 0, 0);*/
-    background-color: rgba(128, 0, 0, 0.253);
+    background-color: rgba(10, 10, 10, 0.9);
+    color: rgb(245, 209, 7);
+    font-size: 40px;
 }
 
 .grafico {
@@ -177,7 +180,7 @@ img {
     border: rgb(255, 255, 255,0);
     border-bottom:solid  black;
 }
-
+/*
 #txt:hover{
     border: rgb(255, 255, 255,0);
     border-bottom:solid thick  black;
@@ -186,7 +189,7 @@ img {
     font-size:15px; 
     box-sizing: 50px;
    
-}
+}*/
 
 /*
 .container{
