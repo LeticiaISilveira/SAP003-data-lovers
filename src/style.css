@@ -46,9 +46,8 @@ img {
 }
 
 .div-left {
-    background-color: #E1E8D1;
-    border: solid thin rgba(128, 0, 0);
-    background-color: rgba(128, 0, 0, 0.253);
+    border: solid thin rgb(245, 209, 7);;
+    background-color: rgb(245, 209, 7, 0.7);
     backdrop-filter: 0.5;
     margin: 0.5%;
     max-height: 600px; 
@@ -67,9 +66,8 @@ img {
 .calculo {
     height: 50px;
     margin: 1%;
-    background-color: rgb(0, 46, 128, 0.5);
-    /* border: solid thin rgba(128, 0, 0);*/
-    background-color: rgba(10, 10, 10, 0.9);
+    background-color: rgb(0, 46, 128, 0.8);
+    border: solid thin rgb(245, 209, 7);
     color: rgb(245, 209, 7);
     font-size: 40px;
     padding: 50px;
@@ -144,25 +142,14 @@ img {
     margin-top: 100px;
 } */
 
-/* .grafico {
+ .grafico {
     margin: 1%;
-    background-color: rgb(0, 46, 128, 0.5);
-    /* border: solid thin rgba(128, 0, 0);*/
-    /* background-color: rgba(128, 0, 0, 0.253);
+    background-color: rgb(245, 209, 7, 0.5);
+    border: solid thin rgb(245, 209, 7);
     height: 380px;
-} */ 
+} 
 
-/* .card img {
-    width: 100%;
-} */
-
-/* .comparation-poke {
-    display: flex;
-    padding: 1%;
-    align-items: center;
-} */
-
-/* .card p {
+/* .card p 
     width: 100%;
     color: black;
     align-items: center;
