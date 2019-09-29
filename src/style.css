@@ -4,6 +4,7 @@ body {
     background-size: 100% 100%;
 }
 
+
 body,
 ul,
 li,
@@ -13,13 +14,6 @@ p {
     list-style: none;
     font-size: 1.2rem;
     font-family: Arial;  
-}
-
-
-
-h1 {
-    text-align: center;
-    margin-top: 100px;
 }
 
 img {
@@ -34,7 +28,6 @@ img {
     display: inline;
 }
 
-
 .logo {
     width: 500px;
     margin-left: auto;
@@ -44,6 +37,8 @@ img {
 .container {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
 }
 
 .container>div {
@@ -52,13 +47,14 @@ img {
 
 .div-left {
     background-color: #E1E8D1;
-    /* border: solid thin rgba(128, 0, 0);*/
+    border: solid thin rgba(128, 0, 0);
     background-color: rgba(128, 0, 0, 0.253);
     backdrop-filter: 0.5;
     margin: 0.5%;
-    max-height: 600px;
-    /* overflow: scroll;*/
-}
+    max-height: 600px; 
+    /* overflow: scroll; */
+ } 
+
 
 .div-buttons {
     margin-bottom: 50px;
@@ -68,23 +64,16 @@ img {
     display: inline;
 }
 
-.comparation {
-    height: 200px;
-
+.calculo {
+    height: 50px;
     margin: 1%;
     background-color: rgb(0, 46, 128, 0.5);
     /* border: solid thin rgba(128, 0, 0);*/
     background-color: rgba(10, 10, 10, 0.9);
     color: rgb(245, 209, 7);
     font-size: 40px;
-}
-
-.grafico {
-    margin: 1%;
-    background-color: rgb(0, 46, 128, 0.5);
-    /* border: solid thin rgba(128, 0, 0);*/
-    background-color: rgba(128, 0, 0, 0.253);
-    height: 380px;
+    padding: 50px;
+    text-align: center; 
 }
 
 #cards {
@@ -97,20 +86,12 @@ img {
 .card {
     box-shadow: 0 4px 8px 0 black;
     transition: 0.1s;
-    padding: 2px;
+    padding: 30px;
     margin: 5px;
     display: inline-flex;
     display: block;
-    background-color: white;
-    border-radius: 2px;
-}
-
-.name-card {
-    background-color: ;
-    width: 100%;
-    display: flexbox;
-    border: solid thin black;
-    margin-top: 1.5em;
+    /* background-color: white;
+    border-radius: 2px; */
 }
 
 .card:hover {
@@ -118,51 +99,26 @@ img {
     transform: rotatex(20deg);
 }
 
-.card img {
+.name-card {
+    background-color: ;
     width: 100%;
-}
-
-.card p {
-    width: 100%;
-    color: black;
-    align-items: center;
+    display: flexbox;
+    /* border: solid thin black; */
+    margin-top: 1.5em;
     text-align: center;
-    display: inline-flex;
-    border-radius: 4px;
-    text-align: center;
-}
-
-#name {
-    font-display: Arial;
-    text-align: center;
-    /*Não funcionou... n sei como fazer :/ */
-    border-radius: 5px;
-    text-decoration-color: #E1E8D1 width: 100%;
-}
-
-.main {
-    width: 100%;
-    height: 100%;
-}
-
-.container {
-    width: 100%;
-    height: 100%;
-}
-
-.comparation-poke {
-    display: flex;
-    padding: 1%;
-    align-items: center;
 }
 
 .search {
     display: flex;
 }
+
 #option-order, #option-filter{
     background-color:black;
     color: rgb(245, 209, 7);
     border: black;
+    height: 30px;
+    width: 150px;
+    padding: 6px ;
 }
 
 #option-order:hover, #option-filter:hover{
@@ -172,14 +128,64 @@ img {
 }
 
 #txt{
-    width:120px;
+    width:130px;
     background-color:rgb(255, 255, 255,0);
     padding-left:5px;
     font-style:italic;
     font-size:15px;
     border: rgb(255, 255, 255,0);
     border-bottom:solid  black;
+    height: 30px;
 }
+
+
+/* h1 {
+    text-align: center;
+    margin-top: 100px;
+} */
+
+/* .grafico {
+    margin: 1%;
+    background-color: rgb(0, 46, 128, 0.5);
+    /* border: solid thin rgba(128, 0, 0);*/
+    /* background-color: rgba(128, 0, 0, 0.253);
+    height: 380px;
+} */ 
+
+/* .card img {
+    width: 100%;
+} */
+
+/* .comparation-poke {
+    display: flex;
+    padding: 1%;
+    align-items: center;
+} */
+
+/* .card p {
+    width: 100%;
+    color: black;
+    align-items: center;
+    text-align: center;
+    display: inline-flex;
+    border-radius: 4px;
+    text-align: center;
+} */
+
+/* #name {
+    font-display: Arial;
+    text-align: center;
+    /*Não funcionou... n sei como fazer :/ */
+    /* border-radius: 5px;
+    text-decoration-color: #E1E8D1 width: 100%;
+} */ 
+
+/* .main {
+    width: 100%;
+    height: 100%;
+} */
+
+
 /*
 #txt:hover{
     border: rgb(255, 255, 255,0);
