@@ -7,12 +7,13 @@ exibeMenuTipos();
 
 //MOSTRAR POKEMONS NA TELA
 //criar função
-const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}" /><div class="name-card"><p id="name">${pokemon.name}</p></div></div>`;
+const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}" /><div class="name-card"><h4><p id="name">${pokemon.name}</p></h4></div></div>`;
 let pokemonImages = POKEMONS.map(buildPokemonCard);
 image.innerHTML = pokemonImages.join("");
 
 buildPokemonCard(POKEMONS);
 
+//FUNÇÃO ORDENAR
 document.getElementById("option-order").addEventListener("change", orderPoke);
 const optionOrder = document.getElementById("option-order");
 
@@ -23,7 +24,7 @@ function orderPoke() {
   let pokemonImages = orderedPokemons.map(buildPokemonCard);
 
   image.innerHTML = pokemonImages.join("");
-
+  
 }
 
 //FUNÇÃO EVENTO CLIQUE PESQUISA
@@ -51,7 +52,7 @@ function exibeMenuTipos() {
 //FUNÇÃO FILTRAR
 document.getElementById("option-filter").addEventListener("change", filterPoke);
 const optionFilter = document.getElementById("option-filter");
-const comparacao = document.getElementById("comparation");
+const comparacao = document.getElementById("calculo");
 
 function filterPoke() {
   let resposta = "";
@@ -59,7 +60,7 @@ function filterPoke() {
   const arrayFiltrada = window.data.filter(POKEMONS, filterType);
   arrayFiltrada.map(elem => resposta += buildPokemonCard(elem));
 
-  comparacao.innerHTML = `<p> *Pokemons do tipo ${filterType} representam ${(arrayFiltrada.length * 100 / 151).toFixed(2)} ${"%"} do total.</p>`;
+  comparacao.innerHTML = `<p> Pokemons do tipo ${filterType} representam ${(arrayFiltrada.length * 100 / 151).toFixed(2)} ${"%"} do total.</p>`;
   return image.innerHTML = resposta;
 }
 
