@@ -1,19 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
 body {
     background-image: url(pokbg.jpg);
     background-attachment: fixed;
     background-size: 100% 100%;
-}
-
-
-body,
-ul,
-li,
-p {
-    margin: 0%;
-    padding: 0%;
-    list-style: none;
-    font-size: 1.2rem;
-    font-family: Arial;  
 }
 
 img {
@@ -50,10 +46,8 @@ img {
     background-color: rgb(245, 209, 7, 0.7);
     backdrop-filter: 0.5;
     margin: 0.5%;
-    max-height: 600px; 
-    /* overflow: scroll; */
+    max-height: 700px; 
  } 
-
 
 .div-buttons {
     margin-bottom: 50px;
@@ -65,11 +59,12 @@ img {
 
 .calculo {
     height: 50px;
+    max-width: 100%;
     margin: 1%;
-    background-color: rgb(0, 46, 128, 0.8);
-    border: solid thin rgb(245, 209, 7);
+    background-color: rgba(21, 21, 22, 0.8);
+    border: solid thin black;
     color: rgb(245, 209, 7);
-    font-size: 40px;
+    font-size: 20px;
     padding: 50px;
     text-align: center; 
 }
@@ -78,18 +73,20 @@ img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow: scroll;
-    max-height: 540px;
+    max-height: 630px;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 black;
     transition: 0.1s;
+    background-color: rgba(21, 21, 22, 0.9);
+    border: solid thin black;
+    color: yellow;
     padding: 30px;
     margin: 5px;
     display: inline-flex;
     display: block;
-    /* background-color: white;
-    border-radius: 2px; */
+    border-radius: 2px; 
 }
 
 .card:hover {
@@ -98,10 +95,8 @@ img {
 }
 
 .name-card {
-    background-color: ;
     width: 100%;
     display: flexbox;
-    /* border: solid thin black; */
     margin-top: 1.5em;
     text-align: center;
 }
@@ -136,118 +131,172 @@ img {
     height: 30px;
 }
 
-
-/* h1 {
-    text-align: center;
-    margin-top: 100px;
-} */
-
- .grafico {
+.grafico {
     margin: 1%;
     background-color: rgb(245, 209, 7, 0.5);
     border: solid thin rgb(245, 209, 7);
     height: 380px;
 } 
 
-/* .card p 
-    width: 100%;
-    color: black;
-    align-items: center;
-    text-align: center;
-    display: inline-flex;
-    border-radius: 4px;
-    text-align: center;
-} */
 
-/* #name {
-    font-display: Arial;
-    text-align: center;
-    /*Não funcionou... n sei como fazer :/ */
-    /* border-radius: 5px;
-    text-decoration-color: #E1E8D1 width: 100%;
-} */ 
+@media screen and (max-width: 500px){
 
-/* .main {
-    width: 100%;
-    height: 100%;
-} */
+    #cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow: scroll;
+        max-height: 100%;
+    }
 
+    .header {
+        align-items: center;
+        padding: 10px;
+        max-height: 80%;
+        display: inline;
+    }
 
-/*
-#txt:hover{
-    border: rgb(255, 255, 255,0);
-    border-bottom:solid thick  black;
-    padding-left:5px;
-    font-style:italic white;
-    font-size:15px; 
-    box-sizing: 50px;
+    .logo {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
    
-}*/
+}
 
-/*
-.container{
-    background-color: #FF8161;
-    background-color: rgb(208, 236, 227);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 800px;
-   
+    /*
+    *{
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+    }
     
-}
-
-
-.card{
-    display: grid;
-    max-width: 800px;
-    margin: 0 auto;
-    grid-gap: 20px;
-
-}
-.container > div
-*/
-
-
-/**{
-    margin: 0;
-    padding: 0;  
-    text-decoration: none;
-    list-style-type: none;
-    color: #000;
-}
-
-header{
-    background-color:red;
-    width: auto;
-    height: 80px;
-    text-align: center;
-    padding: 10px;  
-    margin-bottom: 50px;  
-}
-
-/*
-
-
-section{
-    width: auto;
-    height: 700px;
+    body {
+        background-image: url(pokbg.jpg);
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
     
+    img {
+        max-width: 100%;
+        display: block;
+    }
+    
+    .header {
+        align-items: center;
+        padding: 20px;
+        max-height: 70px;
+        display: inline;
+    }
+    
+    .logo {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .container>div {
+        flex: 1 1 200px;
+    }
+    
+    .div-left {
+        border: solid thin rgb(245, 209, 7);;
+        background-color: rgb(245, 209, 7, 0.7);
+        backdrop-filter: 0.5;
+        margin: 0.5%;
+        max-height: 700px; 
+     } 
+    
+    .div-buttons {
+        margin-bottom: 50px;
+    }
+    
+    #btn-busca {
+        display: inline;
+    }
+    
+    .calculo {
+        height: 50px;
+        max-width: 100%;
+        margin: 1%;
+        background-color: rgba(21, 21, 22, 0.8);
+        border: solid thin black;
+        color: rgb(245, 209, 7);
+        font-size: 20px;
+        padding: 50px;
+        text-align: center; 
+    }
+    
+    
+    .card {
+        box-shadow: 0 4px 8px 0 black;
+        transition: 0.1s;
+        background-color: rgba(21, 21, 22, 0.9);
+        border: solid thin black;
+        color: yellow;
+        padding: 30px;
+        margin: 5px;
+        display: inline-flex;
+        display: block;
+        border-radius: 2px; 
+    }
+    
+    .card:hover {
+        box-shadow: 0 12px 24px 0 whitesmoke;
+        transform: rotatex(20deg);
+    }
+    
+    .name-card {
+        width: 100%;
+        display: flexbox;
+        margin-top: 1.5em;
+        text-align: center;
+    }
+    
+    .search {
+        display: flex;
+    }
+    
+    #option-order, #option-filter{
+        background-color:black;
+        color: rgb(245, 209, 7);
+        border: black;
+        height: 30px;
+        width: 150px;
+        padding: 6px ;
+    }
+    
+    #option-order:hover, #option-filter:hover{
+        background-color:rgb(245, 209, 7);
+        color: black;
+        border: rgb(245, 209, 7);
+    }
+    
+    #txt{
+        width:130px;
+        background-color:rgb(255, 255, 255,0);
+        padding-left:5px;
+        font-style:italic;
+        font-size:15px;
+        border: rgb(255, 255, 255,0);
+        border-bottom:solid  black;
+        height: 30px;
+    }
+    
+    .grafico {
+        margin: 1%;
+        background-color: rgb(245, 209, 7, 0.5);
+        border: solid thin rgb(245, 209, 7);
+        height: 380px;
+    } */
 }
-
-main{
-    width: auto;
-    height: auto;
-}
-
-#btn-busca{
-    cursor: pointer;
-}
-#divBusca{
-    background-color: white;
-    border:solid 1px;
-    border-radius:5px;
-    width:280px
-  }
-   
-
-
-*/
+    
