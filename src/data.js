@@ -6,7 +6,6 @@ window.data = {
 };
 
 // ORDENAR por nome
-
 function sort(array, condition) {
   return array.sort(function (a, b) {
     if (condition === "ascending") {
@@ -32,8 +31,8 @@ function filterOptions(arr) {
 }
 
 //FILTRAR TIPO e CALCULO DE PORCENTAGENS RESPECTIVAS
-
 function filter(array, condition) {
   return array.filter(item => item.type.includes(condition));
+
 }
 
