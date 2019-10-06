@@ -1,6 +1,7 @@
 
 const POKEMONS = window.pokemons.pokemon;
 const image = document.getElementById("cards");
+const arrayTipos = window.data.filterOptions(POKEMONS);
 
 exibeMenuTipos();
 
@@ -39,7 +40,6 @@ function searchPoke() {
 //FUNÇÃO RETORNAR OPÇÃO DO FILTRO
 
 function exibeMenuTipos() {
-  const arrayTipos = window.data.filterOptions(POKEMONS);
   document.getElementById("option-filter").innerHTML += `${arrayTipos.map(elem => `<option value="${elem}">${elem}</option>`)}`;
 }
 
@@ -57,3 +57,40 @@ function filterPoke() {
   return image.innerHTML = resposta;
 }
 
+const calculateAllTypePercentages = () => {
+  const typePercentages = arrayTipos.map((type) => {
+    const typeArray = window.data.filter(POKEMONS, type);
+    const percentage = (typeArray.length * 100 / 151).toFixed(2);
+
+    return [type, +percentage];
+  });
+
+  typePercentages.unshift(['Tipos', 'Percentual de tipos de Pokemon']);
+
+  return typePercentages;
+}
+
+
+ 
+google.charts.load("current", {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  const typePercentages = calculateAllTypePercentages();
+  var data = google.visualization.arrayToDataTable(typePercentages);
+
+var options = {
+  legend: true,
+  pieSliceText: 'label',
+  title: 'Pokemons por tipo',
+  pieStartAngle: 200,
+  chartArea: {
+    backgroundColor: '#29220A'
+  },
+  /*chartArea:{backgroundColor:{stroke:"blue"}},*/
+ 
+  colors:['#181407','#29220A','#3A2F0B','#5F4C0B','#886A08','#B18904','#DBA901','#FFBF00','#FACC2E','#F7D358','#F3F781','#F2F5A9','#F5F6CE','#F5ECCE','black']
+};
+
+  var chart = new google.visualization.PieChart(document.getElementById('graph'));
+  chart.draw(data, options);
+}

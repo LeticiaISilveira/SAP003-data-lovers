@@ -58,6 +58,7 @@ img {
 }
 
 .calculo {
+
     height: 50px;
     max-width: 100%;
     margin: 1%;
@@ -135,8 +136,12 @@ img {
     margin: 1%;
     background-color: rgb(245, 209, 7, 0.5);
     border: solid thin rgb(245, 209, 7);
-    height: 380px;
+    height: 500px;
 } 
+
+.div-right{
+    margin-top: 40px;
+}
 
 
 @media screen and (max-width: 500px){
