@@ -10,7 +10,7 @@
 ***
 
 ## Resumo do projeto
-Esse projeto, em dupla, consistiu em criarmos uma página baseda em um dos bancos de dados disponíveis, no nosso caso escolhemos os banco de dados do Pokemón. A partir disso foi preciso pensar as necessidades do usário para relacionarmos com a forma de como seria aplicado a manipulação dos dados disponíveis e de como os atributos obrigatórios se desenharia: a visualização dos dados, o filtrar, o ordenar e um cálculo agregado.
+Esse projeto, em dupla, consistiu em criarmos uma página baseada em um dos bancos de dados disponíveis, no nosso caso escolhemos os banco de dados do Pokemón. A partir disso foi preciso pensar nas necessidades do usário para relacionarmos com a forma de como seria aplicado a manipulação dos dados disponíveis e de como os atributos obrigatórios se desenharia: a visualização dos dados, o filtrar, o ordenar e um cálculo agregado.
 
 ## Histórias dos usuários
 Nessa parte foi precsio criar personas para entendermos nossos usuários e suas respectivas necessidades. Nossos protótipos de personas foram dois:
@@ -27,7 +27,7 @@ Aqui os rascunhos de solução foram se modificando ao longo das práticas de fu
 ![Print da tela](./src/pokee.jpeg)
 
 ## Testes de usabilidade
-Nos testes de usabilidade a parte do select de "selecionar um tipo" não retorna a mostrar todos os pokemóns na tela ao ser clicado novamente depois de selecionado um tipo e querar voltar a ele. 
+Nos testes de usabilidade a parte do select de "selecionar um tipo" não retorna a mostrar todos os pokemóns na tela ao ser clicado novamente.
 
 
 
