@@ -11,10 +11,10 @@
     "start": "serve src/"
   },
   "dependencies": {
-    "eslint": "^5.9.0",
-    "eslint-plugin-jest": "^22.1.2",
+    "eslint": "^7.0.0",
+    "eslint-plugin-jest": "^23.0.0",
     "htmlhint": "^0.10.1",
-    "jest": "^23.6.0",
+    "jest": "^25.0.0",
     "serve": "^11.0.0"
   }
 }
