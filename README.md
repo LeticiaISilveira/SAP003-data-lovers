@@ -33,5 +33,6 @@ Nos testes de usabilidade a parte do select de "selecionar um tipo" não retorna
 <img width="1072" height="686" alt="image" src="https://github.com/user-attachments/assets/6947a3b9-b51b-4b00-927e-7a91dd4a8d34" />
 
 
-![Uploading image.png…]()
+<img width="565" height="663" alt="image" src="https://github.com/user-attachments/assets/9f143159-0eb6-425d-8deb-1df71a784e8c" />
+
 
