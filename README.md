@@ -15,9 +15,9 @@ Esse projeto, em dupla, consistiu em criarmos uma página baseada em um dos banc
 ## Histórias dos usuários
 Nessa parte foi precsio criar personas para entendermos nossos usuários e suas respectivas necessidades. Nossos protótipos de personas foram dois:
 
--Sophia, 25 anos, que gostaria de ver todos os pokemóns na tela e poder achar por ordem alfabética ou procurar pelo nome.
+- Sophia, 25 anos, que gostaria de ver todos os pokemóns na tela e poder achar por ordem alfabética ou procurar pelo nome.
 
--caíque, 16 anos, que gostaria de ter a possiblidade de filtrar os pokémons pelo tipo e  saber a porcentagem respectiva.
+- Caíque, 16 anos, que gostaria de ter a possiblidade de filtrar os pokémons pelo tipo e  saber a porcentagem respectiva.
 
 A partir dessas personas foi feito o protótipo de desenho do produto que poderia resolver as necessidades que os usuários alegaram.
 
@@ -30,6 +30,7 @@ Aqui os rascunhos de solução foram se modificando ao longo das práticas de fu
 ## Testes de usabilidade
 Nos testes de usabilidade a parte do select de "selecionar um tipo" não retorna a mostrar todos os pokemóns na tela ao ser clicado novamente.
 
+<img width="1072" height="686" alt="image" src="https://github.com/user-attachments/assets/6947a3b9-b51b-4b00-927e-7a91dd4a8d34" />
 
 
 
