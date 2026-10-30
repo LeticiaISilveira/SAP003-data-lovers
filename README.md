@@ -16,6 +16,7 @@ Esse projeto, em dupla, consistiu em criarmos uma página baseada em um dos banc
 Nessa parte foi precsio criar personas para entendermos nossos usuários e suas respectivas necessidades. Nossos protótipos de personas foram dois:
 
 -Sophia, 25 anos, que gostaria de ver todos os pokemóns na tela e poder achar por ordem alfabética ou procurar pelo nome.
+
 -caíque, 16 anos, que gostaria de ter a possiblidade de filtrar os pokémons pelo tipo e  saber a porcentagem respectiva.
 
 A partir dessas personas foi feito o protótipo de desenho do produto que poderia resolver as necessidades que os usuários alegaram.
