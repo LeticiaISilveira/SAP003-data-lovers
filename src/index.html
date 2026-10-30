@@ -1,60 +1,80 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#100d0e">
+    <title>Pokédex — Data Lovers</title>
+    <link rel="icon" type="image/png" href="icons8-pokebola-24.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Data Lovers</title>
-  <link rel="icon" type="imagem/png" href="icons8-pokebola-24.png" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <div class="page-shell">
+      <header class="header">
+        <a class="brand" href="#" aria-label="Pokédex Data Lovers">
+          <span class="brand-mark" aria-hidden="true">◉</span>
+          <span>DATA LOVERS</span>
+        </a>
+        <span class="header-note">POKÉDEX DIGITAL</span>
+      </header>
 
-<body>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <div id="root"></div>
-  <header class="header">
-    <img class="logo" src="ttl-black.png" alt="imagem">
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">Um universo para explorar</p>
+            <h1 id="page-title">Encontre seu próximo <span>favorito.</span></h1>
+            <p class="hero-copy">Conheça os Pokémon da primeira geração, descubra seus tipos e explore os dados de cada um.</p>
+          </div>
+          <span class="generation-pill">Kanto · Geração 01</span>
+        </section>
 
+        <section class="container" aria-label="Explorar Pokédex">
+          <div class="div-left">
+            <div class="div-buttons">
+              <form class="search" id="search-form" role="search">
+                <input type="search" id="txt" placeholder="Buscar Pokémon..." aria-label="Buscar Pokémon pelo nome">
+                <button type="submit" id="btn-busca" aria-label="Buscar">
+                  <span class="search-icon" aria-hidden="true"></span>
+                </button>
+              </form>
+              <select id="option-order" name="option" aria-label="Ordenar Pokémon">
+                <option value="ascending">Nome: A–Z</option>
+                <option value="descending">Nome: Z–A</option>
+              </select>
+              <select id="option-filter" name="filter" aria-label="Filtrar por tipo">
+                <option value="all">Todos os tipos</option>
+              </select>
+            </div>
 
-  </header>
-  <section class="container">
-    <div class="div-left">
-      <span class="div-buttons">
-        <select id="option-order" name="option">
-          <option value="ascending">Crescente</option>
-          <option value="descending">Decrescente</option>
-        </select>
-        <select id="option-filter" name="filter">
-          <option value="null">Selecione um tipo</option>
-        </select>
-        <input type="text" id="txt" placeholder="Digite o nome" />
-        <img src="icon-pesquisar.png" id="btn-busca" alt="Buscar" />
-      </span>
+            <div class="list-heading">
+              <h2>Pokémon de Kanto</h2>
+              <p id="results-count" aria-live="polite">151 resultados</p>
+            </div>
+            <div id="cards" aria-live="polite"></div>
+          </div>
 
-      <div id="cards">
-        <!--RECEBE OS CARDS PELO JS DIV CLASS: CARD-->
+          <aside class="div-right" aria-label="Estatísticas da Pokédex">
+            <section class="calculo" id="calculo">
+              <span class="stat-label">Pokémon catalogados</span>
+              <strong class="stat-number">151</strong>
+              <p class="stat-description">A primeira geração, reunida em um só lugar.</p>
+              <p class="comparation-poke" aria-live="polite"></p>
+            </section>
+            <section class="chart-panel" aria-labelledby="chart-title">
+              <h2 id="chart-title">Tipos em destaque</h2>
+              <p class="chart-caption">Distribuição por tipo na região de Kanto</p>
+              <div class="grafico" id="graph" role="img" aria-label="Gráfico de Pokémon por tipo"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
 
-      </div>
+      <footer>Feito para quem ainda quer conhecer todos.</footer>
     </div>
-    <div class="div-right">
-      <div class="calculo" id="calculo">
-
-        <div class="comparation-poke">
-        </div>
-        <p>Total de Pokemons = 151 </p>
-      </div>
-      <div class="grafico" id="graph">
-        <img src="grafico.png" alt="">
-        <p></p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-  </footer>
-  <script src="data/pokemon/pokemon.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
-</body>
-
+    <script src="data/pokemon/pokemon.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>

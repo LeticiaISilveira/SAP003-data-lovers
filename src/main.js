@@ -5,56 +5,60 @@ const arrayTipos = window.data.filterOptions(POKEMONS);
 
 exibeMenuTipos();
 
-//MOSTRAR POKEMONS NA TELA
-//criar função
-const buildPokemonCard = pokemon => `<div class="card"><img src="${pokemon.img}" /><div class="name-card"><h4><p id="name">${pokemon.name}</p></h4></div></div>`;
-let pokemonImages = POKEMONS.map(buildPokemonCard);
-image.innerHTML = pokemonImages.join("");
+const buildPokemonCard = pokemon => `
+  <article class="card" tabindex="0">
+    <span class="pokemon-number">#${pokemon.num}</span>
+    <img src="${pokemon.img}" alt="${pokemon.name}" loading="lazy">
+    <div class="name-card">
+      <h3>${pokemon.name}</h3>
+      <div class="type-list">${pokemon.type.map(type => `<span class="type-tag">${type}</span>`).join("")}</div>
+    </div>
+  </article>`;
 
-buildPokemonCard(POKEMONS);
+function renderPokemons(pokemons) {
+  image.innerHTML = pokemons.length
+    ? pokemons.map(buildPokemonCard).join("")
+    : "<p class=\"empty-state\">Nenhum Pokémon encontrado. Tente outro nome ou tipo.</p>";
+  document.getElementById("results-count").textContent = `${pokemons.length} ${pokemons.length === 1 ? "resultado" : "resultados"}`;
+}
 
-//FUNÇÃO ORDENAR
+renderPokemons(POKEMONS);
+
 document.getElementById("option-order").addEventListener("change", orderPoke);
 const optionOrder = document.getElementById("option-order");
 
 function orderPoke() {
   const orderType = optionOrder[optionOrder.selectedIndex].value;
   const orderedPokemons = window.data.sort(POKEMONS, orderType);
-  let pokemonImages = orderedPokemons.map(buildPokemonCard);
-  image.innerHTML = pokemonImages.join("");
-
+  renderPokemons(orderedPokemons);
 }
 
-//FUNÇÃO EVENTO CLIQUE PESQUISA
-document.getElementById("btn-busca").addEventListener("click", searchPoke);
+document.getElementById("search-form").addEventListener("submit", event => {
+  event.preventDefault();
+  searchPoke();
+});
 
 function searchPoke() {
   const namePok = document.getElementById("txt").value;
   const arrayRetornada = window.data.search(POKEMONS, namePok);
-  let pokemonImages = arrayRetornada.map(buildPokemonCard);
-  image.innerHTML = pokemonImages.join("");
-
-  //buildPokemonCard(arrayRetornada)
+  renderPokemons(arrayRetornada);
 }
-
-//FUNÇÃO RETORNAR OPÇÃO DO FILTRO
 
 function exibeMenuTipos() {
   document.getElementById("option-filter").innerHTML += `${arrayTipos.map(elem => `<option value="${elem}">${elem}</option>`)}`;
 }
 
-//FUNÇÃO FILTRAR
 document.getElementById("option-filter").addEventListener("change", filterPoke);
 const optionFilter = document.getElementById("option-filter");
 const comparacao = document.getElementById("calculo");
 
 function filterPoke() {
-  let resposta = "";
   const filterType = optionFilter.value;
-  const arrayFiltrada = window.data.filter(POKEMONS, filterType);
-  arrayFiltrada.map(elem => resposta += buildPokemonCard(elem));
-  comparacao.innerHTML = `<p> Pokemons do tipo ${filterType} representam ${(arrayFiltrada.length * 100 / 151).toFixed(2)} ${"%"} do total.</p>`;
-  return image.innerHTML = resposta;
+  const arrayFiltrada = filterType === "all" ? POKEMONS : window.data.filter(POKEMONS, filterType);
+  renderPokemons(arrayFiltrada);
+  comparacao.querySelector(".comparation-poke").textContent = filterType === "all"
+    ? ""
+    : `Tipo ${filterType}: ${(arrayFiltrada.length * 100 / POKEMONS.length).toFixed(2)}% do total.`;
 }
 
 const calculateAllTypePercentages = () => {
@@ -65,32 +69,28 @@ const calculateAllTypePercentages = () => {
     return [type, +percentage];
   });
 
-  typePercentages.unshift(['Tipos', 'Percentual de tipos de Pokemon']);
+  typePercentages.unshift(["Tipos", "Percentual de tipos de Pokemon"]);
 
   return typePercentages;
-}
+};
 
-
- 
-google.charts.load("current", {packages:["corechart"]});
+google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
   const typePercentages = calculateAllTypePercentages();
   var data = google.visualization.arrayToDataTable(typePercentages);
 
-var options = {
-  legend: true,
-  pieSliceText: 'label',
-  title: 'Pokemons por tipo',
-  pieStartAngle: 200,
-  chartArea: {
-    backgroundColor: '#29220A'
-  },
-  /*chartArea:{backgroundColor:{stroke:"blue"}},*/
- 
-  colors:['#181407','#29220A','#3A2F0B','#5F4C0B','#886A08','#B18904','#DBA901','#FFBF00','#FACC2E','#F7D358','#F3F781','#F2F5A9','#F5F6CE','#F5ECCE','black']
-};
+  var options = {
+    backgroundColor: "transparent",
+    chartArea: { left: 0, top: 8, width: "100%", height: "90%" },
+    legend: { position: "none" },
+    pieSliceText: "label",
+    pieStartAngle: 200,
+    pieHole: 0.48,
+    pieSliceBorderColor: "#191415",
+    colors: ["#f04452", "#d8303e", "#b92431", "#ff6b73", "#8d1d28", "#f58978", "#72202a", "#c64d55", "#9d3c45", "#ee8b8b", "#5a2027", "#da6565", "#b34e58", "#f3a5a5", "#82313b"]
+  };
 
-  var chart = new google.visualization.PieChart(document.getElementById('graph'));
+  var chart = new google.visualization.PieChart(document.getElementById("graph"));
   chart.draw(data, options);
 }
